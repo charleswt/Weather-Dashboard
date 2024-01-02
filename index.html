@@ -3,9 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Weather Dashboard</title>
 </head>
 <body>
-    
+    <header>Weather Dashboard</header>
+    <div class="row">
+    <aside>
+        <p>Search for a City:</p>
+        <input id="input" class="city-input" placeholder="&#128270">
+        <button>Search</button>
+        <div>
+            <div id="appendStorage" class="storage-list">
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+                <span class="storage-list-item">Example</span>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-column-center">
+        <div class="result-container">
+            <div class="day1">
+                <ul id="oneDay">
+                    <li id="resultCityName"><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                    
+                </ul>
+            </div>
+                <p>5-Day Forecast</p>
+                <div class="fiveDayFit">
+                <ul class="fiveDay">
+                    <li><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                </ul>
+                <ul class="fiveDay">
+                    <li><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                </ul>
+                <ul class="fiveDay">
+                    <li><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                </ul>
+                <ul class="fiveDay">
+                    <li><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                </ul>
+                <ul class="fiveDay">
+                    <li><span id="resultDate"></span></li>
+                    <li><span id="resultIcon"></span></li>
+                    <li>Temp:<span id="resultTemp"></span></li>
+                    <li>Wind:<span id="resultWind"></span></li>
+                    <li>Humidity:<span id="resultHumidity"></span></li>
+                </div>
+                </ul>
+        </div>
+    </main>
+</div>
 </body>
 </html>

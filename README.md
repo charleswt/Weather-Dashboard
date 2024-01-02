@@ -8,7 +8,7 @@
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [Screenshots](#screenshots)
+- [Screenshots](#screenshot)
 - [License](#license)
 
 ## Features
