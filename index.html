@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <title>Weather Dashboard</title>
@@ -12,19 +13,10 @@
     <div class="row">
     <aside>
         <p>Search for a City:</p>
-        <input id="input" class="city-input" placeholder="&#128270">
-        <button>Search</button>
+        <input type="text" id="input" class="city-input" placeholder="&#128270">
+        <button id="searchBtn">Search</button>
         <div>
             <div id="appendStorage" class="storage-list">
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
-                <span class="storage-list-item">Example</span>
                 <span class="storage-list-item">Example</span>
             </div>
         </div>
@@ -82,5 +74,6 @@
         </div>
     </main>
 </div>
+<script src="js/script.js"></script>
 </body>
 </html>
