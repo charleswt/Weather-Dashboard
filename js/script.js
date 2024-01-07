@@ -1,34 +1,29 @@
 const apiKey = "3b20066a45c23f22eadffa2c8929e33f";
 let currentDate = dayjs().format('YYYY-MM-DD');
 let city; // Declare city outside the click event to make it accessible
-onload = () => {
+
+save();
+
+const funcH = document.querySelector('#histBtn');
+funcH.addEventListener('click', function() {
+    weather();
     save();
-}
+});
+
 const funcW = document.querySelector('#searchBtn');
 funcW.addEventListener('click', function() {
     weather();
     save();
 });
-function loader() {
-window.location.reload()
-}
 
 const wipeMem1 = document.querySelector('#wipeMem1');
 wipeMem1.addEventListener('click', function() {
-    wipe1();
-    loader();
+    localStorage.removeItem('data');
+    document.location.reload();
 });
 
-function wipe1() {
-    localStorage.removeItem('data'); // Use consistent naming
-}
-
-function wipe5() {
-    localStorage.removeItem('data5'); // Use consistent naming
-}
-
 function save() {
-    const newData = `<button id="searchBtn" class="storage-list-item">${city}</button>`;
+    const newData = `<button id="histBtn" class="storage-list-item">${city}</button>`;
 
     if (localStorage.getItem('data') == null) {
         localStorage.setItem('data', '[]');
@@ -36,9 +31,9 @@ function save() {
     const oldData = JSON.parse(localStorage.getItem('data'));
     oldData.push(newData);
     
-    if (newData == `<button id="searchBtn" class="storage-list-item"></button>`) {
+    if (newData == `<button id="histBtn" class="storage-list-item"></button>`) {
         oldData.pop();
-    } else if (newData == `<button id="searchBtn" class="storage-list-item">undefined</button>`) {
+    } else if (newData == `<button id="histBtn" class="storage-list-item">undefined</button>`) {
         oldData.pop();
     }
 
@@ -48,22 +43,10 @@ function save() {
     
     if (oldData.length >= 11) {
         oldData.shift(); // Remove the first element
-    } 
-
-
-    for (let j = 0; j < oldData.length; j++) {
-        if (newData === oldData[j]) {
-            oldData.pop(); // Remove the element at index j
-        }
-        console.log(oldData[j]);
     }
 
     const ap = document.querySelector('#appendStorage');
     ap.innerHTML = oldData.join('');
-    
-    
-    // Check if the length is greater than or equal to 9
-    
 }
 
 function weather() {
@@ -118,10 +101,11 @@ function weather() {
 
                     if (localStorage.getItem('data5') == null) {
                         localStorage.setItem('data5', '[]');
-                    }
+                    } 
+
                     const oldData5 = JSON.parse(localStorage.getItem('data5'));
                     oldData5.push(forecastHtml);
-
+                
                     // Check if the length is greater than or equal to 6
                     if (oldData5.length >= 6) {
                         oldData5.shift(); // Remove the first element
@@ -131,6 +115,7 @@ function weather() {
                     console.log(oldData5);
                     const appendDays = document.querySelector('#fiveDayAppend');
                     appendDays.innerHTML = oldData5.join('');
+                
                 }
             });
         }
