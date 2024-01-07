@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <title>Weather Dashboard</title>
@@ -14,63 +15,20 @@
     <aside>
         <p>Search for a City:</p>
         <input type="text" id="input" class="city-input" placeholder="&#128270">
-        <button id="searchBtn">Search</button>
+        <button id="searchBtn">Search</button><button id="wipeMem1" class="searchBtn">Delete all</button>
         <div>
             <div id="appendStorage" class="storage-list">
-                <span class="storage-list-item">Example</span>
             </div>
         </div>
     </aside>
     <main class="flex-column-center">
         <div class="result-container">
-            <div class="day1">
-                <ul id="oneDay">
-                    <li id="resultCityName"><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
-                    
-                </ul>
+            <p>Todays Forecast</p>
+            <div id="oneDay">
             </div>
                 <p>5-Day Forecast</p>
-                <div class="fiveDayFit">
-                <ul class="fiveDay">
-                    <li><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
-                </ul>
-                <ul class="fiveDay">
-                    <li><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
-                </ul>
-                <ul class="fiveDay">
-                    <li><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
-                </ul>
-                <ul class="fiveDay">
-                    <li><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
-                </ul>
-                <ul class="fiveDay">
-                    <li><span id="resultDate"></span></li>
-                    <li><span id="resultIcon"></span></li>
-                    <li>Temp:<span id="resultTemp"></span></li>
-                    <li>Wind:<span id="resultWind"></span></li>
-                    <li>Humidity:<span id="resultHumidity"></span></li>
+                <div id="fiveDayAppend" class="fiveDayFit">
                 </div>
-                </ul>
         </div>
     </main>
 </div>
