@@ -2,7 +2,7 @@ const apiKey = "3b20066a45c23f22eadffa2c8929e33f";
 let currentDate = dayjs().format('YYYY-MM-DD');
 let city; // Declare city outside the click event to make it accessible
 
-save();
+document.querySelector('.storage-list').value = localStorage.getItem("data")
 
 const funcH = document.querySelector('#histBtn');
 funcH.addEventListener('click', function() {
@@ -23,7 +23,7 @@ wipeMem1.addEventListener('click', function() {
 });
 
 function save() {
-    const newData = `<button id="histBtn" class="storage-list-item">${city}</button>`;
+    const newData = `<button id="histBtn" onClick="weather('${city}')" class="storage-list-item">${city}</button>`;
 
     if (localStorage.getItem('data') == null) {
         localStorage.setItem('data', '[]');
@@ -33,7 +33,7 @@ function save() {
     
     if (newData == `<button id="histBtn" class="storage-list-item"></button>`) {
         oldData.pop();
-    } else if (newData == `<button id="histBtn" class="storage-list-item">undefined</button>`) {
+    } else if (newData == `<button id="histBtn" onClick="weather()" class="storage-list-item">undefined</button>`) {
         oldData.pop();
     }
 
@@ -49,11 +49,11 @@ function save() {
     ap.innerHTML = oldData.join('');
 }
 
-function weather() {
+function weather(cityBtn) {
     const input = $("#input").val();
     city = input;
     console.log(city);
-    const weatherApi = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    const weatherApi = `https://api.openweathermap.org/data/2.5/forecast?q=${cityBtn?cityBtn:city}&appid=${apiKey}`;
 
     fetch(weatherApi).then(function (response) {
         if (response.ok) {
@@ -121,3 +121,4 @@ function weather() {
         }
     });
 }
+
